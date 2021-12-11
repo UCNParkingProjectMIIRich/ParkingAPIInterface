@@ -17,6 +17,9 @@ class ParkingAPIWrapper:
         self.unified_layout = unified_layout
 
     def get_data(self):
+        """
+        retrieves the data from the domain defined above
+        """
         response = requests.get(DOMAIN)
         response_text = response.json()
 
