@@ -23,9 +23,16 @@ jobs:
         python-version: '3.x'
     - name: Install dependencies
       run: |
-        sudo apt-get install python-pytest |
-        pip install wheel |
-        pip install -r requirements.txt
+        sudo apt-get install python-pytest
+    - name: Install pip dependencies
+      uses: BSFishy/pip-action@v1
+      with:
+        requirements: requirements.txt
+        no-deps: true
+        pre: true
+        editable: editable
+        platform: ':all:'
+        upgrade: true
     - name: Run tests
       run: pytest
 #     - name: Build package
