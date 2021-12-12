@@ -19,9 +19,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Set up Python
       run: |
-        sudo apt-get install python3 |
-        sudo apt-get install python3-pip |
-        sudo apt-get install python-pytest |
+        sudo apt-get install python3 python3-pip python-pytest |
         pip install -r requirements.txt
         
     - name: Run tests
