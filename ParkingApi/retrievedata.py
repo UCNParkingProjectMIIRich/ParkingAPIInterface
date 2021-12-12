@@ -21,7 +21,9 @@ class ParkingAPIWrapper:
         retrieves the data from the domain defined above
         """
         response = requests.get(DOMAIN)
-        response_text = response.json()
+
+        # There might not always be a response
+        response_text = response.json() or "{}"
 
         return_struct = copy.copy(self.unified_layout)
         return_struct['payload'] = response_text
